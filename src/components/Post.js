@@ -47,7 +47,7 @@ export default function Post(props) {
       </div>
       <div className="caixaImagem">
         <img className="imagemPost" src={props.imagemPost} alt="" onDoubleClick={() => coracao(true)} data-test="post-image" />
-        <ion-icon name="heart" class="escondido" data-test="like-post"></ion-icon>
+        <ion-icon name="heart" class="escondido"></ion-icon>
       </div>  
       <div className="rodape">
         <div className="rodapeI">
