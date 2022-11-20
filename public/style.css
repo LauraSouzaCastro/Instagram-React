@@ -28,6 +28,36 @@ ion-icon {
   color: #f00;
 }
 
+.caixaImagem{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.caixaImagem ion-icon {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  animation: cresce 0.3s;
+}
+.escondido{
+  display: none;
+}
+@keyframes cresce {
+  from {
+    transform:  scale(0.2);
+  }
+  to {
+    transform:  scale(1);
+    width: 140px;
+    height: 140px;
+  }
+}
+.imagemPost {
+  max-width: 100%;
+}
 .linha {
   height: 22px;
   width: 1px;
@@ -367,9 +397,6 @@ ion-icon {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     margin-bottom: 5%;
-  }
-  .imagemPost {
-    max-width: 100%;
   }
   .barraI {
     position: fixed;

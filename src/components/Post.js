@@ -4,11 +4,22 @@ export default function Post(props) {
   let [nomeCoracao, setNomeCoracao] = useState("heart-outline");
   let [curtidas, setCurtidas] = useState(props.numCurtidas);
   let [postSalvo, setPostSalvo] = useState("bookmark-outline");
+  function some(){
+    const coracao = document.getElementById(props.id)
+    coracao.parentNode.parentNode.parentNode.parentNode.children[1].children[1].classList.add("escondido")
+  }
   function coracao(dbl){
     if(nomeCoracao === "heart" && dbl === false){
       document.getElementById(props.id).classList.remove("vermelho")
       nomeCoracao = "heart-outline"
       setCurtidas(curtidas-1)
+    }else if(nomeCoracao !== "heart" && dbl === true){
+      nomeCoracao = "heart"
+      const coracao = document.getElementById(props.id)
+      coracao.classList.add("vermelho")
+      coracao.parentNode.parentNode.parentNode.parentNode.children[1].children[1].classList.remove("escondido")
+      setTimeout(some, 800)
+      setCurtidas(curtidas+1)
     }else if(nomeCoracao !== "heart"){
       nomeCoracao = "heart"
       document.getElementById(props.id).classList.add("vermelho")
@@ -34,7 +45,10 @@ export default function Post(props) {
         </div>
         <ion-icon name="ellipsis-horizontal"></ion-icon>
       </div>
-      <img className="imagemPost" src={props.imagemPost} alt="" onDoubleClick={() => coracao(true)} data-test="post-image" />
+      <div className="caixaImagem">
+        <img className="imagemPost" src={props.imagemPost} alt="" onDoubleClick={() => coracao(true)} data-test="post-image" />
+        <ion-icon name="heart" class="escondido" data-test="like-post"></ion-icon>
+      </div>  
       <div className="rodape">
         <div className="rodapeI">
           <div className="iconesP">
