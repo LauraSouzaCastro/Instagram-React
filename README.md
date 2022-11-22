@@ -57,4 +57,4 @@ Projeto #07 - Instagram [React]
     - [x]  Para dar like clicando na imagem, é necessário clicar duas vezes seguidas, rapidamente.
         - Clicar duas vezes com um intervalo de tempo grande NÃO CONFIGURA double click.
 - Animação de coração no double click
-    - [ ]  Quando ocorrer o double click na imagem, deverá surgir no centro da imagem um coração, que primeiro cresce e depois desaparece.
+    - [x]  Quando ocorrer o double click na imagem, deverá surgir no centro da imagem um coração, que primeiro cresce e depois desaparece.
